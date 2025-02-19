@@ -130,7 +130,6 @@ body {
   background-color: #16A085;
 }
 
-
 /* About Section */
 .about {
   padding: 4rem 0;
@@ -195,8 +194,6 @@ body {
   height: 100%;
   border: none;
 }
-
-
 
 /* Experience Section */
 .experience {
@@ -283,13 +280,84 @@ body {
   }
 }
 
-/* Typing Animation Keyframes */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #1ABC9C;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #fff; }
+.dark-mode-toggle:hover {
+  background-color: #16A085;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+}
+
+.dark-mode .navbar {
+  background-color: #1C2833;
+}
+
+.dark-mode .nav-menu a {
+  color: #ddd;
+}
+
+.dark-mode .nav-menu a:hover {
+  color: #1ABC9C;
+}
+
+.dark-mode .hero {
+  background-color: #1C2833;
+  color: #fff;
+}
+
+.dark-mode .hero-content h1 {
+  border-right: 0.15em solid #ddd;
+}
+
+.dark-mode .about, .dark-mode .projects, .dark-mode .experience, .dark-mode .contact {
+  background-color: #1A1A1A;
+  color: #ddd;
+}
+
+.dark-mode .about h2, .dark-mode .projects h2, .dark-mode .experience h2, .dark-mode .contact h2 {
+  color: #1ABC9C;
+}
+
+.dark-mode .project-card {
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .project-card h3 {
+  color: #1ABC9C;
+}
+.dark-mode .experience-item h3 {
+  color: #1ABC9C; /* Green color */
+}
+
+.dark-mode .resume h2 {
+  color: #1ABC9C; /* Green color */
+}
+
+.dark-mode .footer {
+  background-color: #1C2833;
+}
+
+.dark-mode .btn {
+  background-color: #16A085;
+}
+
+.dark-mode .btn:hover {
+  background-color: #1ABC9C;
 }
