@@ -20,6 +20,8 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- Dark Mode Toggle Button -->
+      <button id="dark-mode-toggle" class="btn" aria-label="Toggle Dark Mode">🌙</button>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
       </div>
@@ -55,22 +57,22 @@
           <p>
             Developed an end-to-end data pipeline using Python libraries (Pandas, NumPy, scikit-learn) to predict stock prices with improved accuracy.
           </p>
-          <a href="https://github.com/suman183" target="_blank" class="btn">View on GitHub</a>
+          <a href="https://github.com/suman183/Strategic-Stock-Analysis-for-Informed-Decisions" target="_blank" class="btn">View on GitHub</a>
         </div>
         <div class="project-card">
           <h3>Clustering Model for Marketing Strategies</h3>
           <p>
             Designed a customer segmentation model using K-Means enhanced with interactive visualizations to uncover key purchasing patterns.
           </p>
-          <a href="https://github.com/suman183" target="_blank" class="btn">View on GitHub</a>
+          <a href="https://github.com/suman183/Customer-Segmentation" target="_blank" class="btn">View on GitHub</a>
         </div>
         <div class="project-card">
-        <h3>Grocery Sales Forecasting</h3>
-        <p>
-          Developed a machine learning model to predict future grocery sales using time-series analysis, aiding business decision-making.
-        </p>
-        <a href="https://github.com/suman183/Optimizing-Sales-with-Data-Driven-Projections" target="_blank" class="btn">View on GitHub</a>
-      </div>
+          <h3>Grocery Sales Forecasting</h3>
+          <p>
+            Developed a machine learning model to predict future grocery sales using time-series analysis, aiding business decision-making.
+          </p>
+          <a href="https://github.com/suman183/Optimizing-Sales-with-Data-Driven-Projections" target="_blank" class="btn">View on GitHub</a>
+        </div>
       </div>
     </div>
   </section>
@@ -110,18 +112,16 @@
   </section>
 
   <!-- Resume Section -->
-<section id="resume" class="resume">
-  <div class="container">
-    <h2>Resume</h2>
-    <p>View my professional resume below and click the button to download.</p>
-    <div class="resume-preview">
-      <embed src="Suman-Kumar-Banoth.pdf" type="application/pdf" />
+  <section id="resume" class="resume">
+    <div class="container">
+      <h2>Resume</h2>
+      <p>View my professional resume below and click the button to download.</p>
+      <div class="resume-preview">
+        <embed src="Suman-Kumar-Banoth.pdf" type="application/pdf" />
+      </div>
+      <a href="Suman-Kumar-Banoth.pdf" download class="btn">Download Resume</a>
     </div>
-    <a href="Suman-Kumar-Banoth.pdf" download class="btn">Download Resume</a>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -169,6 +169,24 @@
         navMenu.classList.remove('active');
       });
     }
+
+    // Dark Mode Toggle and Persistence
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.textContent = "🌙";
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.textContent = "🌞"; // Sun symbol for light mode
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.textContent = "🌙"; // Moon symbol for dark mode
+      }
+    });
   </script>
 </body>
 </html>
